@@ -1,5 +1,9 @@
 # incident-handling-project
 Malware Traffic Analysis and Timeline Reconstruction using Wireshark, Plaso, and Timesketch
+## Authors
+
+- Julia Palomo Vicente  
+- Caleb Vallance
 ---
 ## 1. Project Overview  
 This project investigates suspicious network activity using the **2025-12-11 Kongtuke ClickFix Activity dataset** from Malware-Traffic-Analysis. The main objective was to identify Indicators of Compromise (IoCs), analyze attacker behavior, and understand how the infection occurred.
