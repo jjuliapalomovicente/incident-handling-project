@@ -25,7 +25,9 @@ This project also highlights the importance of timeline reconstruction in unders
   - Supporting infected host artifacts  
 
 This dataset simulates a realistic malware infection and provides both network and forensic data for analysis.
+![Dataset](screenshots/dataset.png)
 
+*Figure 1. Kongtuke ClickFix dataset from Malware-Traffic-Analysis.*
 ---
 
 ## 4. Tools Used  
@@ -72,8 +74,8 @@ During the analysis, a DNS query for the domain **lotw.org** was observed. This 
 The internal host **10.12.11.101** then initiated communication with this IP, establishing a TCP connection followed by TLS encrypted traffic.
 
 This behavior is suspicious because it indicates that the internal system is communicating with an external server, which could be part of command-and-control (C2) activity or malicious script execution.
- 
-*Figure 1. DNS resolution and initial encrypted connection observed in Wireshark.*
+![Initial Connection](screenshots/initial_connection.png) 
+*Figure 2. DNS resolution and initial encrypted connection observed in Wireshark.*
 
 ---
 
@@ -82,8 +84,8 @@ This behavior is suspicious because it indicates that the internal system is com
 Further analysis revealed multiple DNS requests to external domains. The traffic included communication with services such as Cloudflare and other external domains, which may indicate webpage loading or automated script activity.
 
 Repeated DNS requests and consistent outbound communication patterns suggest that the system may be running automated processes or maintaining communication with external infrastructure.
-
-*Figure 2. Repeated DNS requests to multiple external domains observed in Wireshark.*
+![DNS Traffic](screenshots/dns_analysis.png)
+*Figure 3. Repeated DNS requests to multiple external domains observed in Wireshark.*
 
 ---
 
@@ -98,8 +100,8 @@ Repeated DNS requests and consistent outbound communication patterns suggest tha
 
 These indicators suggest that the internal host was compromised and actively communicating with an external system. The repeated DNS queries and encrypted traffic indicate possible automated malicious activity.
 
-
-*Figure 3. Indicators of Compromise identified through network traffic analysis.*
+![IoCs](screenshots/ioc.png)
+*Figure 4. Indicators of Compromise identified through network traffic analysis.*
 
 ---
 
@@ -107,8 +109,8 @@ These indicators suggest that the internal host was compromised and actively com
 
 Timesketch was successfully deployed using Docker. The backend services, including PostgreSQL, OpenSearch, and Redis, were running correctly.
 
-
-*Figure 4. Successful Timesketch deployment using Docker.*
+![Timesketch Setup](screenshots/timesketch_setup.png)
+*Figure 5. Successful Timesketch deployment using Docker.*
 
 ---
 
@@ -117,8 +119,8 @@ Timesketch was successfully deployed using Docker. The backend services, includi
 Although the backend services were running, the Timesketch web interface could not be accessed. The connection to localhost failed, likely due to Docker networking issues or compatibility limitations with macOS.
 
 This highlights a real-world challenge in incident response, where tools may not always function as expected due to environment constraints.
-
-*Figure 5. Timesketch web interface connection failure.*
+![Error](screenshots/error.png)
+*Figure 6. Timesketch web interface connection failure.*
 
 ---
 
@@ -141,5 +143,7 @@ Future work would include completing the timeline reconstruction using log2timel
 ---
 
 ## 12. Project Structure  
-
+- **data/** → Contains dataset files used for analysis  
+- **screenshots/** → Contains screenshots and evidence images  
+- **README.md** → Full project report and documentation  
   
